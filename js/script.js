@@ -67,7 +67,9 @@ window.addEventListener('DOMContentLoaded', function() {
          function addZero(num){
             if(num <= 9) {
                 return '0' + num;
-            } else return num;
+            } else  {
+               return num; 
+            }
         }
 
          hours.textContent = t.hours;
@@ -84,4 +86,30 @@ window.addEventListener('DOMContentLoaded', function() {
       }
    }
    setClock('timer', deadline);
+
+   // modal
+   function modalWindow(openModal){
+      let  overlay = document.querySelector('.overlay'),
+      close = document.querySelector('.popup-close'),
+      open = document.querySelectorAll(openModal);
+
+      for(let i = 0; i < open.length; i++) {
+
+         open[i].addEventListener('click', function() {
+          overlay.style.display = 'block';
+          this.classList.add('more-splash');
+          document.body.style.overflow = 'hidden';
+         });
+   
+         close.addEventListener('click', function() {
+            overlay.style.display = 'none';
+            open[i].classList.remove('more-splash');
+            document.body.style.overflow = '';
+         });
+      }
+   }
+   modalWindow('.more');
+   modalWindow('.description-btn');
+   
+         
 });
