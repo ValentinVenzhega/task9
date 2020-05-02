@@ -22,7 +22,7 @@ window.addEventListener('DOMContentLoaded', function() {
       }
    }
 
-   info.addEventListener('click', function(event) {
+   info.addEventListener('click', (event) => {
       let target = event.target;
       if (target && target.classList.contains('info-header-tab')) {
          for (let i = 0; i < tab.length; i++) {
@@ -95,13 +95,13 @@ window.addEventListener('DOMContentLoaded', function() {
 
       for(let i = 0; i < open.length; i++) {
 
-         open[i].addEventListener('click', function() {
+         open[i].addEventListener('click', () => {
           overlay.style.display = 'block';
           this.classList.add('more-splash');
           document.body.style.overflow = 'hidden';
          });
    
-         close.addEventListener('click', function() {
+         close.addEventListener('click', () => {
             overlay.style.display = 'none';
             open[i].classList.remove('more-splash');
             document.body.style.overflow = '';
