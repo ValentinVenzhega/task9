@@ -17,4 +17,3 @@ class Options {
 }
 const item = new Options(300, 500, "red", 14, "center");
 item.createDiv();
-
