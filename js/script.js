@@ -231,5 +231,4 @@ window.addEventListener('DOMContentLoaded', function() {
          }
       }
    });
-
 });
